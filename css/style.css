@@ -1,0 +1,179 @@
+/* css/style.css */
+
+/* --- Estilos Globais --- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+.botao {
+  display: inline-block;
+  padding: 10px 22px;
+  background: #00b0ff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.botao:hover {
+  background: #0091cc;
+  transform: scale(1.05);
+}
+
+
+/* --- Estilos da Página Principal (series.html) --- */
+.menu-generos {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px 0;
+  margin-top: 30px;
+}
+
+.menu-generos a {
+  color: #00b0ff;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px 12px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.menu-generos a:hover {
+  background: #001f33;
+  color: #00e0ff;
+}
+
+.secao-series h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #00b0ff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.cartao {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #1a1a1a;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cartao:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px #00b0ff;
+}
+
+.cartao img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.cartao .rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.rodape span {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.avaliacao {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #f5c518;
+  font-weight: bold;
+}
+
+.avaliacao img {
+  height: 16px;
+  border-radius: 2px;
+}
+
+.estrela {
+  color: #f5c518;
+}
+
+.sobreposicao {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 50, 0.85);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.cartao:hover .sobreposicao {
+  opacity: 1;
+}
+
+.sobreposicao p {
+  margin: 4px 0;
+  font-size: 15px;
+}
+
+/* --- Estilos da Página de Detalhes (serie-modelo.html) --- */
+.serie-detalhes {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.serie-detalhes img {
+  width: 300px; /* imagem maior na página de detalhes */
+  height: auto;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.info-serie {
+  flex: 1;
+}
+
+.info-serie h1 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+}
+
+.info-serie p {
+  margin: 10px 0;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
