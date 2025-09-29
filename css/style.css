@@ -1,37 +1,194 @@
 /* css/style.css */
 
-/* --- Estilos Globais --- */
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
   background: #0f0f0f;
   color: #fff;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 15px;
-}
-
-.botao {
-  display: inline-block;
-  padding: 10px 22px;
-  background: #00b0ff;
-  color: #fff;
+a {
   text-decoration: none;
-  font-weight: bold;
+  color: white;
+}
+
+/* =========================
+   NAVBAR / MENU SUPERIOR
+   ========================= */
+/* --- ESTILOS DA BARRA DE NAVEGAÇÃO (NAVBAR) --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 999; /* garante que fique sobre outros elementos */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Sen", sans-serif;
+}
+
+/* LOGO */
+.logo-container { flex: 1; }
+.logo {
+  font-size: 30px;
+  color: #4dbf00;
+  margin: 0;
+  line-height: 1;
+}
+.logo a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  padding: 6px 8px;
+}
+
+/* MENU PRINCIPAL */
+.menu-container { flex: 6; }
+.menu-list {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu-list-item { margin: 0; }
+
+/* Estilo para links dentro da lista do menu */
+.menu-list-item a {
+  display: inline-block;
+  color: #fff;
+  font-weight: 600;
+  padding: 6px 10px;
   border-radius: 6px;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.menu-list-item a:hover,
+.menu-list-item a:focus {
+  background: rgba(77,191,0,0.12);
+  color: #eaffea;
+  transform: translateY(-1px);
+  outline: none;
+}
+.menu-list-item.active a {
+  background-color: #4dbf00;
+  color: #000;
 }
 
-.botao:hover {
-  background: #0091cc;
-  transform: scale(1.05);
+/* PERFIL E TOGGLE */
+.profile-container {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.profile-picture {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.06);
+}
+.profile-text-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-weight: 600;
+  margin-right: 6px;
+  font-size: 0.95rem;
 }
 
+/* TOGGLE (modo claro/escuro) */
+.toggle {
+  width: 46px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.toggle-icon {
+  font-size: 11px;
+  color: goldenrod;
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.9;
+}
+.toggle .fa-moon { left: 8px; }
+.toggle .fa-sun  { right: 8px; }
+.toggle-ball {
+  width: 18px;
+  height: 18px;
+  background-color: #000;
+  position: absolute;
+  right: 3px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
 
-/* --- Estilos da Página Principal (series.html) --- */
+/* Visual do toggle quando ativo */
+.toggle-ball.active {
+  transform: translateX(-22px);
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+.toggle.active {
+  background-color: #111;
+}
+
+/* acessibilidade - foco visível nos links do menu */
+.menu-list-item a:focus,
+.profile-picture:focus {
+  outline: 2px solid rgba(77,191,0,0.35);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* RESPONSIVO - esconde menu principal e mantém logo/perfil */
+@media (max-width: 940px) {
+  .menu-container { display: none; }
+  .navbar-container { padding: 0 12px; }
+  .logo { font-size: 1.4rem; }
+  .profile-text-container { display: none; } /* economiza espaço */
+}
+
+/* =========================
+   RESTANTE DO SEU CSS (mantido / mesclado)
+   ========================= */
+
+/* menu-generos */
 .menu-generos {
   display: flex;
   justify-content: center;
@@ -41,7 +198,7 @@ body {
 }
 
 .menu-generos a {
-  color: #00b0ff;
+  color: #4dbf00;
   font-weight: bold;
   text-decoration: none;
   padding: 5px 12px;
@@ -50,14 +207,24 @@ body {
 }
 
 .menu-generos a:hover {
-  background: #001f33;
-  color: #00e0ff;
+  background-color: #0f2500;
+  color: #4dbf00;
 }
 
-.secao-series h2 {
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+.secao-series, .secao-filmes {
+  margin-bottom: 60px;
+}
+
+.secao-series h2, .secao-filmes h2 {
   font-size: 26px;
   margin-bottom: 20px;
-  border-bottom: 2px solid #00b0ff;
+  border-bottom: 2px solid #4dbf00;
   display: inline-block;
   padding-bottom: 5px;
 }
@@ -79,7 +246,7 @@ body {
 
 .cartao:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 15px #00b0ff;
+  box-shadow: 0 0 15px #4dbf00;
 }
 
 .cartao img {
@@ -90,7 +257,8 @@ body {
   border-radius: 12px;
 }
 
-.cartao .rodape {
+/* rodape (rodape do card) */
+.rodape {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -112,11 +280,8 @@ body {
 
 .avaliacao img {
   height: 16px;
+  width: auto;
   border-radius: 2px;
-}
-
-.estrela {
-  color: #f5c518;
 }
 
 .sobreposicao {
@@ -125,7 +290,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 50, 0.85);
+  background: rgba(14, 14, 14, 0.85);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -134,8 +299,7 @@ body {
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s;
-  padding: 0 10px;
-  box-sizing: border-box;
+  padding: 10px;
 }
 
 .cartao:hover .sobreposicao {
@@ -147,33 +311,88 @@ body {
   font-size: 15px;
 }
 
-/* --- Estilos da Página de Detalhes (serie-modelo.html) --- */
-.serie-detalhes {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  align-items: flex-start;
+.botao-assistir {
+  margin-top: 12px;
+  padding: 10px 22px;
+  background: #4dbf00;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s;
 }
 
-.serie-detalhes img {
-  width: 300px; /* imagem maior na página de detalhes */
-  height: auto;
-  border-radius: 12px;
-  flex-shrink: 0;
+.botao-assistir:hover {
+  background: #205000;
 }
 
-.info-serie {
-  flex: 1;
+/* --- ESTILOS DO RODAPÉ (footer) --- */
+footer.rodape {
+  width: 100%;
+  background-color: black;
+  color: #a3a3a3;
+  padding: 30px 0;
+  text-align: center;
+  /* Redefinindo estilos para o footer, pois a classe .rodape já era usada nos cards */
+  display: block;
 }
 
-.info-serie h1 {
-  margin-top: 0;
+.rodape-conteudo {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.direitos {
+  font-size: 0.9rem;
   margin-bottom: 15px;
-  font-size: 2.5rem;
 }
 
-.info-serie p {
-  margin: 10px 0;
-  line-height: 1.6;
-  font-size: 1.1rem;
+.parceiros {
+  font-size: 0.8rem;
 }
+
+.parceiro-titulo {
+  font-weight: bold;
+  color: white;
+  margin-right: 5px;
+}
+
+.parceiro-link {
+  color: #4dbf00;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.parceiro-link:hover {
+  color: white;
+}
+
+.separador {
+  color: #555;
+}
+
+/* =========================
+   TEMA CLARO (quando body tiver .tema-claro)
+   ========================= */
+.tema-claro body,
+.tema-claro {
+  background: #ffffff;
+  color: #111;
+}
+
+.tema-claro .navbar {
+  background: #ffffff;
+  color: #111;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+.tema-claro .menu-list-item a { color: #111; }
+.tema-claro .menu-list-item a:hover { background: rgba(77,191,0,0.08); color: #033; }
+.tema-claro .menu-list-item.active a { background: #4dbf00; color: #000; }
+.tema-claro .profile-text-container { color: #111; }
+.tema-claro .toggle { background: #000; }
+.tema-claro .toggle-ball { background: #fff; }
+
+/* pequenas melhorias de acessibilidade/visual */
+:focus { outline: none; }
