@@ -1,3 +1,9 @@
+/*
+    OBJETIVO DESTE ARQUIVO:
+    Controlar a funcionalidade do carrossel de filmes e séries na página inicial.
+    Ele permite que o usuário navegue pelas listas clicando nas setas.
+*/
+
 document.addEventListener("DOMContentLoaded", function() {
 
     // --- LÓGICA PARA AS SETAS DO CARROSSEL ---

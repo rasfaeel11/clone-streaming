@@ -1,3 +1,9 @@
+/*
+    OBJETIVO DESTE ARQUIVO:
+    Controlar a funcionalidade de alternar entre o tema claro e o tema escuro.
+    É uma funcionalidade de User Experience (UX) que oferece personalização.
+*/
+
 const body = document.querySelector("body");
 const toggleBall = document.querySelector(".toggle-ball");
 

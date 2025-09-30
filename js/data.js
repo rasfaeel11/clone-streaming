@@ -1,3 +1,15 @@
+/*
+    OBJETIVO DESTE ARQUIVO:
+    Este arquivo funciona como nosso "banco de dados" local. Ele centraliza todas as
+    informações sobre os filmes e séries em um único lugar. Se precisarmos adicionar,
+    remover ou editar um item, mexemos apenas aqui.
+
+    COMO FUNCIONA:
+    - Exportamos (usando 'export') duas constantes: 'seriesData' e 'moviesData'.
+    - Ambas são 'arrays' (listas), onde cada item da lista é um 'objeto'.
+    - Cada objeto representa um filme ou série e contém suas informações (id, titulo, imagem, etc.),
+      seguindo uma estrutura padrão.
+*/
 export const seriesData = [
   {
     id: "breakingbad",

@@ -1,3 +1,9 @@
+/*
+    OBJETIVO DESTE ARQUIVO:
+    Este script é o "construtor" da página de séries. Ele pega os dados brutos do `data.js`
+    e os transforma em elementos visuais (os cards) que o usuário pode ver e interagir.
+    Ele é responsável por renderizar dinamicamente o conteúdo na tela.
+*/
 
 
 import { seriesData } from './data.js';
