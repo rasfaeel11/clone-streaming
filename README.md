@@ -104,6 +104,3 @@ Este projeto foi criado e desenvolvido pela equipe:
 
 ---
 
-### 📜 Licença
-
-Este projeto está sob a licença **MIT**.****
