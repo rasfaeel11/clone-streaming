@@ -77,7 +77,7 @@ export const seriesData = [
   {
     id: "arremessofinal", 
     titulo: "Last Dance - Arremesso final",
-    categoria: "series",
+    categoria: "filmes",
     imagem: "images/arremessofinal.jpg", 
     sinopse: "Traçando a ascensão dos Chicago Bulls de 1990, liderados por Michael Jordan, uma das dinastias mais notáveis da história do esporte..",
     ano: 2020,
@@ -137,7 +137,7 @@ export const seriesData = [
   {
     id: "nossoplaneta",
     titulo: "Nosso Planeta",
-    categoria: "documentarios",
+    categoria: "filmes",
     imagem: "images/nossoplaneta.jpg",
     sinopse: "Documentário que explora a beleza natural do planeta Terra e os impactos da atividade humana sobre a vida selvagem.",
     ano: 2019,
@@ -152,7 +152,7 @@ export const seriesData = [
   {
     id: "guerradovietna",
     titulo: "A Guerra do Vietnã",
-    categoria: "series",
+    categoria: "filmes",
     imagem: "images/aguerradovietnam.jpg",
     sinopse: "Documentário histórico que detalha os eventos, batalhas e consequências da Guerra do Vietnã.",
     ano: 2017,
