@@ -2,8 +2,6 @@
 
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -12,168 +10,116 @@ body {
   color: #fff;
 }
 
+.logo {
+  font-size: 30px;
+  color: #4dbf00;
+}
+
+
 a {
   text-decoration: none;
   color: white;
 }
 
-/* =========================
-   NAVBAR / MENU SUPERIOR
-   ========================= */
-/* --- ESTILOS DA BARRA DE NAVEGAÇÃO (NAVBAR) --- */
+
 .navbar {
-  position: sticky;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 50px;
-  background: rgba(0, 0, 0, 0.88);
-  z-index: 999; /* garante que fique sobre outros elementos */
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+  background-color: black;
+  position: sticky;
+  top: 0;
 }
 
 .navbar-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 50px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  box-sizing: border-box;
+  padding: 0 50px;
+  height: 100%;
   color: white;
   font-family: "Sen", sans-serif;
 }
 
-/* LOGO */
-.logo-container { flex: 1; }
-.logo {
-  font-size: 30px;
-  color: #4dbf00;
-  margin: 0;
-  line-height: 1;
-}
-.logo a {
-  color: inherit;
-  text-decoration: none;
-  display: inline-block;
-  padding: 6px 8px;
+.logo-container {
+  flex: 1;
 }
 
-/* MENU PRINCIPAL */
-.menu-container { flex: 6; }
+
+.menu-container {
+ flex: 6;
+}
+
 .menu-list {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+ display: flex;
+ list-style: none;
 }
-.menu-list-item { margin: 0; }
 
-/* Estilo para links dentro da lista do menu */
+.menu-list-item {
+ margin-right: 30px;
+}
+
 .menu-list-item a {
-  display: inline-block;
-  color: #fff;
-  font-weight: 600;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-.menu-list-item a:hover,
-.menu-list-item a:focus {
-  background: rgba(77,191,0,0.12);
-  color: #eaffea;
-  transform: translateY(-1px);
-  outline: none;
-}
-.menu-list-item.active a {
-  background-color: #4dbf00;
-  color: #000;
+ text-decoration: none;
+ color: white;
+ padding: 5px 12px;
+ border-radius: 5px;
+ transition: background 0.3s, color 0.3s;
 }
 
-/* PERFIL E TOGGLE */
+.menu-list-item a:visited {
+ color: white;
+}
+
+.menu-list-item a:hover {
+ background: #205000;
+ color: #fff;
+}
+
+.menu-list-item.active a {
+ background-color: #4dbf00;
+ color: black;
+}
 .profile-container {
   flex: 2;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 10px;
-}
-.profile-picture {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(255,255,255,0.06);
-}
-.profile-text-container {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #fff;
-  font-weight: 600;
-  margin-right: 6px;
-  font-size: 0.95rem;
 }
 
-/* TOGGLE (modo claro/escuro) */
+.profile-text-container {
+  margin: 0 20px;
+}
+
+.profile-picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .toggle {
-  width: 46px;
-  height: 24px;
-  background-color: #fff;
-  border-radius: 999px;
+  width: 40px;
+  height: 20px;
+  background-color: white;
+  border-radius: 30px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   position: relative;
-  padding: 2px;
-  box-sizing: border-box;
-  cursor: pointer;
 }
+
 .toggle-icon {
-  font-size: 11px;
   color: goldenrod;
-  position: absolute;
-  pointer-events: none;
-  opacity: 0.9;
 }
-.toggle .fa-moon { left: 8px; }
-.toggle .fa-sun  { right: 8px; }
+
 .toggle-ball {
   width: 18px;
   height: 18px;
-  background-color: #000;
+  background-color: black;
   position: absolute;
-  right: 3px;
+  right: 1px;
   border-radius: 50%;
   cursor: pointer;
-  transition: transform 0.25s ease, background-color 0.25s ease;
-}
-
-/* Visual do toggle quando ativo */
-.toggle-ball.active {
-  transform: translateX(-22px);
-  background-color: #fff;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
-}
-.toggle.active {
-  background-color: #111;
-}
-
-/* acessibilidade - foco visível nos links do menu */
-.menu-list-item a:focus,
-.profile-picture:focus {
-  outline: 2px solid rgba(77,191,0,0.35);
-  outline-offset: 2px;
-  border-radius: 6px;
+  transition: 1s ease all;
 }
 
 /* RESPONSIVO - esconde menu principal e mantém logo/perfil */
@@ -372,27 +318,116 @@ footer.rodape {
 .separador {
   color: #555;
 }
+body.tema-claro {
+  background-color: #f5f5f5;
+  color: #111;
+  transition: all 0.5s ease;
+}
 
-/* =========================
-   TEMA CLARO (quando body tiver .tema-claro)
-   ========================= */
-.tema-claro body,
-.tema-claro {
-  background: #ffffff;
+body.tema-claro .navbar {
+  background-color: #ffffff;
+}
+
+body.tema-claro .navbar-container {
   color: #111;
 }
 
-.tema-claro .navbar {
-  background: #ffffff;
+body.tema-claro .menu-list-item a {
   color: #111;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
-.tema-claro .menu-list-item a { color: #111; }
-.tema-claro .menu-list-item a:hover { background: rgba(77,191,0,0.08); color: #033; }
-.tema-claro .menu-list-item.active a { background: #4dbf00; color: #000; }
-.tema-claro .profile-text-container { color: #111; }
-.tema-claro .toggle { background: #000; }
-.tema-claro .toggle-ball { background: #fff; }
 
-/* pequenas melhorias de acessibilidade/visual */
-:focus { outline: none; }
+body.tema-claro .menu-list-item a:visited {
+  color: #111;
+}
+
+body.tema-claro .menu-list-item a:hover {
+  background-color: #cce5cc;
+  color: #000;
+}
+
+body.tema-claro .menu-list-item.active a {
+  background-color: #4dbf00;
+  color: #fff;
+}
+
+body.tema-claro .profile-text-container {
+  color: #111;
+}
+
+body.tema-claro .toggle {
+  background-color: #000;
+}
+
+body.tema-claro .toggle-ball {
+  background-color: #fff;
+  transform: translateX(-20px);
+}
+
+body.tema-claro .left-menu-icon {
+  color: #111;
+}
+
+body.tema-claro .container {
+  background-color: #f5f5f5;
+  color: #111;
+  transition: all 0.5s ease;
+}
+
+body.tema-claro h2 {
+  color: #111;
+}
+
+body.tema-claro .grade {
+  background-color: transparent;
+}
+
+body.tema-claro .movie-list-title {
+  color: #111;
+}
+
+body.tema-claro .movie-list-item-title,
+body.tema-claro .movie-list-item-desc {
+  color: #111;
+}
+
+body.tema-claro .top-3-list .title {
+  color: #111;
+}
+
+body.tema-claro .top-3-list .details {
+  color: #333;
+}
+
+body.tema-claro .movie-list-item-button,
+body.tema-claro .movie-list-item-button3 {
+  background-color: #4dbf00;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+body.tema-claro .rodape {
+  background-color: #ffffff;
+  color: #111;
+  transition: all 0.5s ease;
+}
+
+body.tema-claro .parceiro-titulo {
+  color: #111;
+}
+
+body.tema-claro .parceiro-link {
+  color: #4dbf00;
+}
+
+body.tema-claro .parceiro-link:hover {
+  color: #000;
+}
+
+body.tema-claro .logo{
+  color: #000;
+}
+
+.toggle,
+.toggle-ball {
+  transition: all 0.5s ease;
+}

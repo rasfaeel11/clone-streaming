@@ -1,4 +1,4 @@
-// Supondo que você tenha um arquivo data.js com as informações
+
 import { seriesData } from './data.js'; 
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -44,8 +44,6 @@ if (serie) {
     // Exemplo de como popular episódios (requer dados no seu data.js)
     const gradeEpisodios = document.getElementById('grade-episodios');
     if (gradeEpisodios) {
-        // Aqui você adicionaria a lógica para mostrar os episódios da série
-        // Por enquanto, vamos deixar uma mensagem padrão.
         gradeEpisodios.innerHTML = `<p style="color: #ccc;">Episódios desta série ainda não disponíveis.</p>`;
     }
 

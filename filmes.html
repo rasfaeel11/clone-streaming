@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Todos os Filmes - Visio Play</title>
+ <link rel="stylesheet" href="css/style.css">
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+<body>
+
+<div class="navbar">
+ <div class="navbar-container">
+   <div class="logo-container">
+     <h1 class="logo"><a href="index.html">Visio Play</a></h1>
+   </div>
+   <div class="menu-container">
+     <ul class="menu-list">
+       <li class="menu-list-item"><a href="index.html">Home</a></li>
+       <li class="menu-list-item active"><a href="filmes.html">Filmes</a></li>
+       <li class="menu-list-item"><a href="series.html">Séries</a></li>
+       <li class="menu-list-item"><a href="#">Popular</a></li>
+       <li class="menu-list-item"><a href="#">Tendências</a></li>
+     </ul>
+   </div>
+   <div class="profile-container">
+     <img class="profile-picture" src="img/cr7.png" alt="Foto do perfil">
+     <div class="profile-text-container">
+       <span class="profile-text">Perfil</span>
+       <i class="fas fa-caret-down"></i>
+     </div>
+     <div class="toggle">
+       <i class="fas fa-moon toggle-icon"></i>
+       <i class="fas fa-sun toggle-icon"></i>
+       <div class="toggle-ball"></div>
+     </div>
+   </div>
+ </div>
+</div>
+
+<nav class="menu-generos">
+ <a href="#lancamentos">Lançamentos</a>
+ <a href="#populares">Populares</a>
+ <a href="#classicos">Clássicos</a>
+</nav>
+
+<main class="container" id="conteudo-principal">
+ <section id="lancamentos" class="secao-filmes">
+   <h2>Todos os Filmes</h2>
+   <div id="grade-lancamentos" class="grade">
+     </div>
+ </section>
+</main>
+
+<footer class="rodape">
+ <div class="rodape-conteudo">
+     <p class="direitos">© 2025 Visio Play. Todos os direitos reservados.</p>
+     <div class="parceiros">
+         <span class="parceiro-titulo">Sites Parceiros:</span>
+         <a href="#" class="parceiro-link">HBO</a><span class="separador">|</span>
+         <a href="#" class="parceiro-link">Netflix</a><span class="separador">|</span>
+         <a href="#" class="parceiro-link">Amazon Prime</a>
+     </div>
+ </div>
+</footer>
+
+<script type="module" src="js/filmes-main.js"></script> 
+<script src="js/series.js"></script> 
+</body>
+</html>
