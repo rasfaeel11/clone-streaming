@@ -253,6 +253,21 @@ export const seriesData = [
     classificacao: "12+",
     genero: "Drama, Histórico, Religião",
     episodios: 32
+  },
+  {
+    id: "neymarcaosperfeito",
+    titulo: "Neymar: O Caos Perfeito",
+    categoria: "filmes",
+    imagem: "img/Neymar_-_O_Caos_Perfeito.jpg",
+    sinopse: "A série documental acompanha a trajetória de Neymar Jr., desde sua ascensão meteórica no futebol até os bastidores de sua vida pessoal e profissional.",
+    ano: 2022,
+    duracao: "1 temporada",
+    diretor: "David Charles Rodrigues",
+    elenco: "Neymar Jr., David Beckham, Lionel Messi, Daniel Alves",
+    imdb: 6.6,
+    classificacao: "12+",
+    genero: "Documentário, Esporte, Biografia",
+    episodios: 3
   }
 ];
 
